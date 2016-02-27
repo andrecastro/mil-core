@@ -7,6 +7,9 @@ import java.io.Serializable;
  */
 public enum GameStatus implements Serializable {
 
-    PLAYING, IDLE;
+    IDLE,
+    PLAYING,
+    PLACING_OF_PIECE,
+    REMOVING_PIECE;
 
 }

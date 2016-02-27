@@ -9,6 +9,8 @@ public class Player implements Serializable {
 
     private String name;
     private PlayerSelection selection;
+    private Integer numberOfPieces;
+    private Integer numberOfPiecesPlaced;
 
     private Client client;
 
@@ -16,6 +18,8 @@ public class Player implements Serializable {
         this.name = name;
         this.client = client;
         this.selection = selection;
+        this.numberOfPieces = 9; // each player start with 9 pieces
+        this.numberOfPiecesPlaced = 0; // each player has no pieces placed
     }
 
     public String getName() {
@@ -28,5 +32,21 @@ public class Player implements Serializable {
 
     public Client getClient() {
         return client;
+    }
+
+    public void increaseNumberOfPiecesPlaced() {
+        this.numberOfPiecesPlaced++;
+    }
+
+    public void decreaseNumberOfPieces() {
+        this.numberOfPieces--;
+    }
+
+    public Integer getNumberOfPieces() {
+        return numberOfPieces;
+    }
+
+    public Integer getNumberOfPiecesPlaced() {
+        return numberOfPiecesPlaced;
     }
 }

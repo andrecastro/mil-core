@@ -1,6 +1,7 @@
 package br.edu.ifce.ppd.tria.core.model;
 
 import java.io.Serializable;
+import java.util.HashMap;
 
 /**
  * Created by andrecoelho on 2/16/16.
@@ -12,6 +13,7 @@ public class Game implements Serializable {
     private Player firstPlayer;
     private Player secondPlayer;
     private GameStatus status;
+    private HashMap<Integer, Spot> board;
 
     public Game(String alias, Player firstPlayer) {
         this.alias = alias;
@@ -37,6 +39,14 @@ public class Game implements Serializable {
 
     public GameStatus getStatus() {
         return status;
+    }
+
+    public void setBoard(HashMap<Integer, Spot> board) {
+        this.board = board;
+    }
+
+    public HashMap<Integer, Spot> getBoard() {
+        return board;
     }
 
     public boolean isIdle() {
@@ -70,4 +80,13 @@ public class Game implements Serializable {
 
         return secondPlayer.getClient().equals(client);
     }
+
+    public Client getOpponentClientOf(Client client) {
+        if (isFirstPlayer(client)) {
+            return getSecondPlayer().getClient();
+        }
+
+        return getFirstPlayer().getClient();
+    }
+
 }
