@@ -17,4 +17,6 @@ public interface GameService {
     <T extends Serializable> T enterGame(Client client, String gameId, String secondPlayerName);
 
     <T extends Serializable> T putPieceInSpot(Client client, String gameId, Integer selectedSpotId);
+
+    <T extends Serializable> T removePiece(Client client, String gameId, Integer selectedSpotId);
 }

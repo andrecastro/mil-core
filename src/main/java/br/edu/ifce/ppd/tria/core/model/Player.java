@@ -49,4 +49,16 @@ public class Player implements Serializable {
     public Integer getNumberOfPiecesPlaced() {
         return numberOfPiecesPlaced;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Player)) {
+            return false;
+        }
+
+        String currentId = getClient().getId();
+        String otherId = ((Player) obj).getClient().getId();
+
+        return currentId.equals(otherId);
+    }
 }
