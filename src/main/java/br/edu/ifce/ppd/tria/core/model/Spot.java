@@ -53,6 +53,10 @@ public class Spot implements Serializable {
         this.occupiedBy = occupiedBy;
     }
 
+    public SpotOccupiedBy getOccupiedBy() {
+        return occupiedBy;
+    }
+
     public boolean isOccupiedByPlayerOne() {
         return this.occupiedBy.equals(PLAYER_ONE);
     }

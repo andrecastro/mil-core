@@ -19,4 +19,13 @@ public interface GameService {
     <T extends Serializable> T putPieceInSpot(Client client, String gameId, Integer selectedSpotId);
 
     <T extends Serializable> T removePiece(Client client, String gameId, Integer selectedSpotId);
+
+    <T extends Serializable> T movePiece(Client client, String gameId, Integer fromSpotId, Integer toSpotId);
+
+    <T extends Serializable> T askToRestartGame(Client client, String gameId);
+
+    <T extends Serializable> T restartGame(Client client, String gameId);
+
+    <T extends Serializable> T giveUp(Client client);
+
 }

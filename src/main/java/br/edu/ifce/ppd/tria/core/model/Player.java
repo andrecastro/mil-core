@@ -22,6 +22,11 @@ public class Player implements Serializable {
         this.numberOfPiecesPlaced = 0; // each player has no pieces placed
     }
 
+    public void resetPieces() {
+        this.numberOfPieces = 9; // each player start with 9 pieces
+        this.numberOfPiecesPlaced = 0; // each player has no pieces placed
+    }
+
     public String getName() {
         return name;
     }
