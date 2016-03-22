@@ -57,6 +57,10 @@ public class Spot implements Serializable {
         return occupiedBy;
     }
 
+    public HashSet<Spot> getPossiblePaths() {
+        return possiblePaths;
+    }
+
     public boolean isOccupiedByPlayerOne() {
         return this.occupiedBy.equals(PLAYER_ONE);
     }

@@ -15,6 +15,10 @@ public class Game implements Serializable {
     private GameStatus status;
     private HashMap<Integer, Spot> board;
 
+    private Boolean switchTurn = true;
+    private Boolean canRemovePiece = false;
+    private Boolean gameOver = false;
+
     public Game(String alias, Player firstPlayer) {
         this.alias = alias;
         this.firstPlayer = firstPlayer;
@@ -89,4 +93,27 @@ public class Game implements Serializable {
         return getFirstPlayer().getClient();
     }
 
+    public void setSwitchTurn(Boolean switchTurn) {
+        this.switchTurn = switchTurn;
+    }
+
+    public boolean switchTurn() {
+        return switchTurn;
+    }
+
+    public void setCanRemovePiece(Boolean canRemovePice) {
+        this.canRemovePiece = canRemovePice;
+    }
+
+    public  boolean canRemovePiece() {
+        return canRemovePiece;
+    }
+
+    public void setGameOver(Boolean gameOver) {
+        this.gameOver = gameOver;
+    }
+
+    public Boolean isGameOver() {
+        return gameOver;
+    }
 }
